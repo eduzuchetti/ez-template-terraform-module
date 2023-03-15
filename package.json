@@ -1,4 +1,22 @@
 {
+  "name": "ez-template-terraform-module",
+  "description": "This is just a template repo for terraform modules",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:eduzuchetti/ez-template-terraform-module.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eduzuchetti/ez-template-terraform-module/issues"
+  },
+  "homepage": "https://github.com/eduzuchetti/ez-template-terraform-module#readme",
   "dependencies": {
     "@semantic-release/changelog": "^6.0.2",
     "@semantic-release/commit-analyzer": "^9.0.2",
