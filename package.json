@@ -1,6 +1,7 @@
 {
   "name": "ez-template-terraform-module",
   "description": "This is just a template repo for terraform modules",
+  "version": "1.0.0",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
