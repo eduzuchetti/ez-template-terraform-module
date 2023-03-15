@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:eduzuchetti/ez-template-terraform-module.git"
+    "url": "git+ssh://git@github.com/eduzuchetti/ez-template-terraform-module.git"
   },
   "keywords": [],
   "author": "",
