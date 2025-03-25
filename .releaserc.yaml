@@ -1,44 +1,18 @@
-branches: ['main']
-ci: true
-debug: true
-dryRun: false
-tagFormat: '${version}'
+name: "Build"
 
-preset: 'conventionalcommits'
-githubUrl: 'https://api.github.com/'
+on:
+  push:
+    branches:
+      - main
+      - develop
+    paths-ignore: 
+      - '.github/**'
 
-verifyConditions:
-  - '@semantic-release/changelog'
-  - '@semantic-release/git'
-  - '@semantic-release/github'
-  - 'semantic-release-slack-bot'
-
-analyzeCommits:
-  - path: '@semantic-release/commit-analyzer'
-
-generateNotes:
-  - path: '@semantic-release/release-notes-generator'
-    writerOpts:
-      groupBy: 'type'
-      commitGroupsSort: 'title'
-      commitsSort: 'header'
-    linkCompare: true
-    linkReferences: true
-
-prepare:
-  - path: '@semantic-release/changelog'
-  - path: '@semantic-release/git'
-    message: 'RELEASE: ${nextRelease.version}'
-    assets: ['CHANGELOG.md']
-
-publish:
-  - path: '@semantic-release/github'
-
-success:
-  - path: 'semantic-release-slack-bot'
-    notifyOnSuccess: true
-    markdownReleaseNotes: false
-
-fail:
-  - path: 'semantic-release-slack-bot'
-    notifyOnFail: true
+jobs:
+  deploy-terraform:
+    uses: eduzuchetti/ez-devops-gh-actions/.github/workflows/pipeline-terraform-module.yml@main
+    secrets: inherit
+    with:
+      sonar-scan: false
+      terraform-version: 1.10.5
+      node-version: 22
