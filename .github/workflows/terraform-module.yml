@@ -5,8 +5,8 @@ on:
     branches:
       - main
       - develop
-    paths-ignore: 
-      - '.github/**'
+    # paths-ignore: 
+    #   - '.github/**'
 
 jobs:
   deploy-terraform:
@@ -14,5 +14,5 @@ jobs:
     secrets: inherit
     with:
       sonar-scan: false
-      terraform-version: 1.11.2
-      node-version: 22
+      terraform-version: 1.10.5
+      node-version: 20
